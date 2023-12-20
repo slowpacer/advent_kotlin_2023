@@ -2,9 +2,8 @@ abstract class ContestDay<Input, Output>(private val inputPath: String) {
 
     fun execute() {
         val input = readInput(inputPath)
-        val transformedInput = transformInput(input)
-        partOne(transformedInput).println()
-        partTwo(transformedInput).println()
+        partOne(transformInput(input)).println()
+        partTwo(transformInput(input)).println()
     }
 
     abstract fun partOne(input: Input): Output
