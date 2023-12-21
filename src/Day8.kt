@@ -1,7 +1,3 @@
-package input
-
-import ContestDay
-
 fun main() {
     Day8().execute()
 }

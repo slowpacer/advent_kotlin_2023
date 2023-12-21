@@ -3,8 +3,6 @@ fun main() {
 }
 
 class Day5 : ContestDay<SeedToLocationPath, Long>("input/Day05_part1.txt") {
-
-    private val digitRegexp = "\\d+".toRegex()
     override fun partOne(input: SeedToLocationPath): Long {
         val locations = input.seedsToLocations(input.seeds.asSequence())
         return locations.min()
@@ -86,7 +84,7 @@ class Day5 : ContestDay<SeedToLocationPath, Long>("input/Day05_part1.txt") {
     }
 
     private fun buildSourceToDestMap(line: String): Stage {
-        val lineMappings = digitRegexp.findAll(line).mapTo(mutableListOf()) { it.value.toLong() }
+        val lineMappings = numberRegexp.findAll(line).mapTo(mutableListOf()) { it.value.toLong() }
         val (destination, source, range) = lineMappings
         return Stage(destination, source, range)
     }
