@@ -6,8 +6,13 @@ abstract class ContestDay<Input, Output>(private val inputPath: String) {
         partTwo(transformInput(input)).println()
     }
 
-    abstract fun partOne(input: Input): Output
-    abstract fun partTwo(input: Input): Output
+    open fun partOne(input: Input): Output? {
+        return null
+    }
+
+    open fun partTwo(input: Input): Output? {
+        return null
+    }
 
     internal abstract fun transformInput(input: List<String>): Input
 }
